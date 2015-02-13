@@ -1,4 +1,7 @@
-<phpunit bootstrap="bootstrap.php.dist">
+<phpunit
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:noNamespaceSchemaLocation="http://schema.phpunit.de/4.5/phpunit.xsd"
+	bootstrap="bootstrap.php.dist">
 	<testsuites>
 		<testsuite name="full">
 			<directory>tests/PHPUnit</directory>
