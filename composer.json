@@ -1,0 +1,15 @@
+{
+    "name": "johnpbloch/wordpress-dev",
+    "description": "A library containing my standard development resources",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "John P Bloch",
+            "email": "me@johnpbloch.com"
+        }
+    ],
+    "minimum-stability": "dev",
+    "require": {
+        "php": ">=5.4"
+    }
+}
