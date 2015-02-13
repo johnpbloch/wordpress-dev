@@ -13,7 +13,13 @@
     "require": {
         "php": ">=5.4"
     },
+    "require-dev": {
+        "johnpbloch/wordpress": ">=4.0.1"
+    },
     "autoload": {
         "psr-4": {"JPB\\WP\\Dev\\": "src/"}
+    },
+    "extra": {
+        "wordpress-install-dir": "vendor/johnpbloch/wordpress"
     }
 }
