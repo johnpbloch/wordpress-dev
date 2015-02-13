@@ -19,6 +19,12 @@
     "autoload": {
         "psr-4": {"JPB\\WP\\Dev\\": "src/"}
     },
+    "autoload-dev": {
+        "psr-4": {
+            "JPB\\Tests\\WP\\Dev\\": "tests/PHPUnit/",
+            "JPB\\Mocks\\WP\\Dev\\": "tests/mocks"
+        }
+    },
     "extra": {
         "wordpress-install-dir": "vendor/johnpbloch/wordpress"
     }
