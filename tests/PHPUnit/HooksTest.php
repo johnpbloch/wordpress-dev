@@ -38,6 +38,23 @@ class HooksTest extends TestCase {
 		$this->assertConditionsMet();
 	}
 
+	public function testPrivateHooks() {
+		$this->mockHookFunctions();
+		WP_Mock::wpFunction( 'JPB\\WP\\Dev\\add_filter', [
+			'times'  => 1,
+			'return' => function ( $hook, $function, $priority, $count ) {
+				$this->assertEquals( 10, $priority );
+				$this->assertEquals( 1, $count );
+				$this->assertEquals( 'wp_footer', $hook );
+				$function();
+			}
+		] );
+		$this->expectOutputString( 'Hello World!' );
+
+		( new Hookable() )->addPrivateAction();
+		$this->assertConditionsMet();
+	}
+
 	protected function mockHookFunctions() {
 		WP_Mock::wpFunction( '_wp_filter_build_unique_id', [
 			/*

@@ -16,4 +16,12 @@ class Hookable {
 		return "<h2>$title</h2>";
 	}
 
+	public function addPrivateAction() {
+		$this->addAction( 'wp_footer', 'output' );
+	}
+
+	private function output() {
+		echo 'Hello World!';
+	}
+
 }
