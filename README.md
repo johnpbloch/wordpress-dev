@@ -36,6 +36,11 @@ least mitigate the risk of name collisions should two modules be using this
 library (although it won't prevent the inevitable bugs that come from two
 codebases potentially trying to use different versions of the same library...).
 
+### Usage
+
+Take a look around the `examples` directory and browse the source code in `src`
+for some examples of how to use these classes.
+
 ### License
 
 This code is distributed under the MIT license. See [LICENSE.md](LICENSE.md)
