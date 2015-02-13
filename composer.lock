@@ -4,7 +4,7 @@
         "Read more about it at http://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "a5b5f8f334c6688aa460b4234c34c91d",
+    "hash": "da7ee8d5db43bad90d88d316c83c1017",
     "packages": [],
     "packages-dev": [
         {
@@ -47,16 +47,16 @@
         },
         {
             "name": "antecedent/patchwork",
-            "version": "1.3.2",
+            "version": "1.2.9",
             "source": {
                 "type": "git",
                 "url": "https://github.com/antecedent/patchwork.git",
-                "reference": "df2b07726c48bcee247faa9053b5e46f4c3ee729"
+                "reference": "cc6ee49876d2e530a4a74a8f50332c781a780059"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/antecedent/patchwork/zipball/df2b07726c48bcee247faa9053b5e46f4c3ee729",
-                "reference": "df2b07726c48bcee247faa9053b5e46f4c3ee729",
+                "url": "https://api.github.com/repos/antecedent/patchwork/zipball/cc6ee49876d2e530a4a74a8f50332c781a780059",
+                "reference": "cc6ee49876d2e530a4a74a8f50332c781a780059",
                 "shasum": ""
             },
             "require": {
@@ -76,15 +76,12 @@
             "description": "A pure PHP library that lets you redefine user-defined functions at runtime.",
             "homepage": "http://antecedent.github.io/patchwork/",
             "keywords": [
-                "aop",
-                "aspect",
-                "interception",
                 "monkeypatching",
                 "redefinition",
                 "runkit",
                 "testing"
             ],
-            "time": "2014-08-07 17:48:26"
+            "time": "2014-08-04 10:14:20"
         },
         {
             "name": "doctrine/instantiator",
