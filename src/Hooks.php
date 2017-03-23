@@ -74,6 +74,29 @@ trait Hooks {
 	}
 
 	/**
+	 * Run do_action
+	 *
+	 * @param string $action  The action to run
+	 * @param array  ...$args Any extra arguments to pass to do_action
+	 */
+	protected function doAction( $action, ...$args ) {
+		do_action( $action, ...$args );
+	}
+
+	/**
+	 * Run apply_filters
+	 *
+	 * @param string $filter  The filter to run
+	 * @param string $value   The value to filter
+	 * @param array  ...$args Any extra values to send through the filter
+	 *
+	 * @return mixed|void
+	 */
+	protected function applyFilters( $filter, $value, ...$args ) {
+		return apply_filters( $filter, $value, ...$args );
+	}
+
+	/**
 	 * Get a unique ID for a hook based on the internal method, hook, and priority
 	 *
 	 * @param string $hook
