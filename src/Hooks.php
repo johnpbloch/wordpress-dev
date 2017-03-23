@@ -1,4 +1,5 @@
 <?php
+
 namespace JPB\WP\Dev;
 
 trait Hooks {
@@ -8,7 +9,7 @@ trait Hooks {
 	 *
 	 * @var array
 	 */
-	protected $__filterMap = [ ];
+	protected $__filterMap = [];
 
 	/**
 	 * Add a WordPress filter
@@ -98,8 +99,8 @@ trait Hooks {
 	 */
 	protected function mapFilter( $id, $method, $argCount ) {
 		if ( empty( $this->__filterMap[ $id ] ) ) {
-			$this->__filterMap[ $id ] = function () use ( $method, $argCount ) {
-				return call_user_func_array( [ $this, $method ], array_slice( func_get_args(), 0, $argCount ) );
+			$this->__filterMap[ $id ] = function ( ...$args ) use ( $method, $argCount ) {
+				return $this->{$method}( array_slice( $args, 0, $argCount ) );
 			};
 		}
 
