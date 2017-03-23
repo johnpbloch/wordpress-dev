@@ -13,7 +13,7 @@ class HooksTest extends TestCase {
 		$expectedHook     = 'the_title';
 		$expectedPriority = rand( 9, 11 );
 		$expectedArgCount = rand( 1, 2 );
-		WP_Mock::wpFunction( 'JPB\\WP\\Dev\\add_filter', [
+		WP_Mock::userFunction( 'JPB\\WP\\Dev\\add_filter', [
 			'times'  => 1,
 			'return' => function (
 				$hook,
@@ -40,7 +40,7 @@ class HooksTest extends TestCase {
 
 	public function testPrivateHooks() {
 		$this->mockHookFunctions();
-		WP_Mock::wpFunction( 'JPB\\WP\\Dev\\add_filter', [
+		WP_Mock::userFunction( 'JPB\\WP\\Dev\\add_filter', [
 			'times'  => 1,
 			'return' => function ( $hook, $function, $priority, $count ) {
 				$this->assertEquals( 10, $priority );
@@ -56,7 +56,7 @@ class HooksTest extends TestCase {
 	}
 
 	protected function mockHookFunctions() {
-		WP_Mock::wpFunction( '_wp_filter_build_unique_id', [
+		WP_Mock::userFunction( '_wp_filter_build_unique_id', [
 			/*
 			 * Lifted entirely (with modifications) from WordPress core itself
 			 */

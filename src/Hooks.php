@@ -123,7 +123,7 @@ trait Hooks {
 	protected function mapFilter( $id, $method, $argCount ) {
 		if ( empty( $this->__filterMap[ $id ] ) ) {
 			$this->__filterMap[ $id ] = function ( ...$args ) use ( $method, $argCount ) {
-				return $this->{$method}( array_slice( $args, 0, $argCount ) );
+				return $this->{$method}( ...array_slice( $args, 0, $argCount ) );
 			};
 		}
 
