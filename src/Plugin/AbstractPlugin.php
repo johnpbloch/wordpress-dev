@@ -1,8 +1,8 @@
 <?php
 
-namespace JPB\WP\Dev;
+namespace JPB\WP\Dev\Plugin;
 
-use JPB\WP\Dev\Plugin\PluginInterface;
+use JPB\WP\Dev\Hooks;
 
 abstract class AbstractPlugin implements PluginInterface {
 
