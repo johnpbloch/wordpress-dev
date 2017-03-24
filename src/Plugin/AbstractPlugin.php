@@ -43,7 +43,7 @@ abstract class AbstractPlugin implements PluginInterface {
 	 *
 	 * @param string $directory
 	 *
-	 * @return PluginInterface Returns itself for easier method chaining
+	 * @return $this Returns itself for easier method chaining
 	 */
 	public function setDirectory( $directory ) {
 		$this->directory = $directory;
@@ -65,7 +65,7 @@ abstract class AbstractPlugin implements PluginInterface {
 	 *
 	 * @param string $url
 	 *
-	 * @return PluginInterface Returns itself for easier method chaining
+	 * @return $this Returns itself for easier method chaining
 	 */
 	public function setUrl( $url ) {
 		$this->url = $url;
