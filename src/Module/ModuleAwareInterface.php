@@ -2,6 +2,8 @@
 
 namespace JPB\WP\Dev\Module;
 
+use JPB\WP\Dev\Plugin\PluginInterface;
+
 interface ModuleAwareInterface {
 
 	/**
@@ -29,5 +31,10 @@ interface ModuleAwareInterface {
 	 * @return ModuleInterface
 	 */
 	public function getModule( $name );
+
+	/**
+	 * @param PluginInterface $plugin
+	 */
+	public function initModules( PluginInterface $plugin );
 
 }

@@ -2,8 +2,11 @@
 
 namespace JPB\WP\Dev\Module;
 
+use JPB\WP\Dev\Plugin\PluginInterface;
+
 trait ModuleAwareTrait {
 
+	/** @var ModuleInterface[] */
 	protected $modules = [];
 
 	/**
@@ -44,6 +47,15 @@ trait ModuleAwareTrait {
 	 */
 	public function getModule( $name ) {
 		return $this->hasModule( $name ) ? $this->modules[ $name ] : null;
+	}
+
+	/**
+	 * @param PluginInterface $plugin
+	 */
+	public function initModules( PluginInterface $plugin ) {
+		foreach ( $this->modules as $module ) {
+			$module->initialize( $plugin );
+		}
 	}
 
 }
