@@ -1,6 +1,6 @@
 <?php
 
-namespace JPB\WP\Dev;
+namespace JPB\WP\Dev\Plugin;
 
 interface PluginInterface {
 

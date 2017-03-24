@@ -2,6 +2,8 @@
 
 namespace JPB\WP\Dev;
 
+use JPB\WP\Dev\Plugin\PluginInterface;
+
 abstract class AbstractPlugin implements PluginInterface {
 
 	use Hooks;
