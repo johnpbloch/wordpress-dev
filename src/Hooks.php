@@ -76,24 +76,22 @@ trait Hooks {
 	/**
 	 * Run do_action
 	 *
-	 * @param string $action  The action to run
-	 * @param array  ...$args Any extra arguments to pass to do_action
+	 * @param string $action The action to run
 	 */
-	protected function doAction( $action, ...$args ) {
-		do_action( $action, ...$args );
+	protected function doAction( $action ) {
+		call_user_func_array( 'do_action', func_get_args() );
 	}
 
 	/**
 	 * Run apply_filters
 	 *
-	 * @param string $filter  The filter to run
-	 * @param string $value   The value to filter
-	 * @param array  ...$args Any extra values to send through the filter
+	 * @param string $filter The filter to run
+	 * @param string $value  The value to filter
 	 *
-	 * @return mixed|void
+	 * @return mixed
 	 */
-	protected function applyFilters( $filter, $value, ...$args ) {
-		return apply_filters( $filter, $value, ...$args );
+	protected function applyFilters( $filter, $value ) {
+		return call_user_func_array( 'apply_filters', func_get_args() );
 	}
 
 	/**
@@ -122,8 +120,11 @@ trait Hooks {
 	 */
 	protected function mapFilter( $id, $method, $argCount ) {
 		if ( empty( $this->__filterMap[ $id ] ) ) {
-			$this->__filterMap[ $id ] = function ( ...$args ) use ( $method, $argCount ) {
-				return $this->{$method}( ...array_slice( $args, 0, $argCount ) );
+			$this->__filterMap[ $id ] = function () use ( $method, $argCount ) {
+				return call_user_func_array(
+					[ $this, $method ],
+					array_slice( func_get_args(), 0, $argCount )
+				);
 			};
 		}
 

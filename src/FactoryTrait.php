@@ -2,8 +2,6 @@
 
 namespace JPB\WP\Dev;
 
-use function wp_list_filter;
-
 trait FactoryTrait {
 
 	protected $_cached = [];
